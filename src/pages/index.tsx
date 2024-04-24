@@ -10,51 +10,40 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 const Home = () => {
-  const [step, setStep] = useState<number>(0);
+
   return (
-    <div className="w-[350px] absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-      <Card className="w-[350px]  bg-gradient-to-b from-red-500 to-orange-500">
+      <Card
+        className={cn("w-[350px] bg-gradient-to-b from-red-400 to-orange-400  absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2")}
+      >
         <CardHeader>
-          <CardTitle className="text-white text-[34px]">
+          <CardTitle className={cn("text-white text-[38px] leading-tight")}>
             Welcome,
             <br />
-            back
+            back :)
           </CardTitle>
+          <CardDescription className={cn("pb-7 text-white")}>shadcn, React-hook-form, zod를 활용한<br/>로그인/회원가입 폼 만들기</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col gap-2">
-          <Button variant={"outline"}>계정 만들기</Button>
-          <Button variant={"outline"}>로그인</Button>
+            <Button variant={"outline"} size={"lg"} className={"rounded-3xl"}>
+              <Link href={"/signUp"} className="inline-block">Sign Up</Link>
+            </Button>
+            <Button
+              variant={"outline"}
+              size={"lg"}
+              className={cn(
+                "rounded-3xl"
+              )}
+            >
+              Sign In
+            </Button>
           </div>
         </CardContent>
       </Card>
-      <Card className="w-[350px]">
-        <CardHeader>
-          <CardTitle>계정 만들기</CardTitle>
-          <CardDescription>
-            Deploy your new project in one-click.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form>
-            <div className="grid w-full items-center gap-4">
-              <div className="flex flex-col space-y-1.5">
-                <Input id="email" placeholder="이메일" />
-                <Input id="lastName" placeholder="성" />
-                <Input id="firstName" placeholder="이름" />
-                <Input id="phone" placeholder="휴대폰 번호" />
-              </div>
-            </div>
-          </form>
-        </CardContent>
-        <CardFooter className="flex justify-between">
-          <Button variant="outline">Cancel</Button>
-          <Button>Deploy</Button>
-        </CardFooter>
-      </Card>
-    </div>
   );
 };
 

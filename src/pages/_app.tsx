@@ -6,7 +6,7 @@ import type { AppProps } from "next/app";
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider attribute="class" defaultTheme="light">
-      <div>
+      <div className="min-h-screen">
         <Component {...pageProps} />
       </div>
       <ModeToggle className={"absolute top-6 right-6"} />
