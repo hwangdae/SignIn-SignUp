@@ -3,7 +3,6 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -11,10 +10,8 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -23,12 +20,11 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { registerSchema } from "@/validators/auth";
 import Link from "next/link";
-import { off } from "process";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 type RegisterInput = z.infer<typeof registerSchema>;
 
-const index = () => {
+const SignIn = () => {
   const form = useForm<RegisterInput>({
     resolver:zodResolver(registerSchema),
     defaultValues: {
@@ -94,4 +90,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default SignIn;

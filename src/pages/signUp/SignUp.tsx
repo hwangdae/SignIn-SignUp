@@ -37,7 +37,7 @@ import { motion } from "framer-motion";
 
 type RegisterInput = z.infer<typeof registerSchema>;
 
-const index = () => {
+const SignUp = () => {
   const [step, setStep] = useState<number>(0);
 
   const form = useForm<RegisterInput>({
@@ -247,4 +247,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default SignUp;
