@@ -208,19 +208,20 @@ const index = () => {
                 )}
               />
             </motion.div>
-
             <div className="flex justify-end gap-2">
               <Button
                 type="button"
                 variant="outline"
+                size={"lg"}
                 className={cn({ hidden: step === 1 })}
               >
-                <Link href={"/"} className="">
+                <Link href={"/"} className="block w-[100%]">
                   Home
                 </Link>
               </Button>
               <Button
                 type="button"
+                size={"lg"}
                 className={cn({ hidden: step === 1 })}
                 onClick={validateAndMoveToNextStep}
               >
