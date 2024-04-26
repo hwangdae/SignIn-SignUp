@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import router from "next/router";
 
 const Home = () => {
   return (
@@ -34,13 +31,21 @@ const Home = () => {
       </CardHeader>
       <CardContent>
         <div className="flex flex-col gap-2">
-          <Button variant={"outline"} size={"lg"} className={"rounded-3xl"}>
-            <Link href={"/signUp"} className="inline-block">
-              Sign Up
-            </Link>
+          <Button
+            onClick={() => router.push("/signUp")}
+            variant={"outline"}
+            size={"lg"}
+            className={"rounded-3xl"}
+          >
+            Sign Up
           </Button>
-          <Button variant={"outline"} size={"lg"} className={cn("rounded-3xl")}>
-            <Link href={"/signIn"}>Sign In</Link>
+          <Button
+            onClick={() => router.push("/signIn")}
+            variant={"outline"}
+            size={"lg"}
+            className={cn("rounded-3xl")}
+          >
+            Sign In
           </Button>
         </div>
       </CardContent>

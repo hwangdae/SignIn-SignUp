@@ -3,30 +3,24 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
@@ -34,6 +28,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerSchema } from "@/validators/auth";
 import { motion } from "framer-motion";
+import router from "next/router";
 
 type RegisterInput = z.infer<typeof registerSchema>;
 
@@ -214,10 +209,9 @@ const SignUp = () => {
                 variant="outline"
                 size={"lg"}
                 className={cn({ hidden: step === 1 })}
+                onClick={() => router.push("/")}
               >
-                <Link href={"/"} className="block w-[100%]">
                   Home
-                </Link>
               </Button>
               <Button
                 type="button"

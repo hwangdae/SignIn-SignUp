@@ -19,22 +19,22 @@ import { cn } from "@/lib/utils";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { registerSchema } from "@/validators/auth";
-import Link from "next/link";
 import { zodResolver } from "@hookform/resolvers/zod";
+import router from "next/router";
 
 type RegisterInput = z.infer<typeof registerSchema>;
 
 const SignIn = () => {
   const form = useForm<RegisterInput>({
-    resolver:zodResolver(registerSchema),
+    resolver: zodResolver(registerSchema),
     defaultValues: {
       email: "",
       password: "",
     },
   });
 
-  const onSubmit = (data:RegisterInput) => {
-    alert(JSON.stringify(data,null,2))
+  const onSubmit = (data: RegisterInput) => {
+    alert(JSON.stringify(data, null, 2));
   };
 
   return (
@@ -78,10 +78,17 @@ const SignIn = () => {
               )}
             />
             <div className="flex justify-end gap-2">
-              <Button type="button" variant="outline" size={"lg"}>
-                <Link href={"/"}>Home</Link>
+              <Button
+                type="button"
+                variant="outline"
+                size={"lg"}
+                onClick={() => router.push("/")}
+              >
+                Home
               </Button>
-              <Button type="submit" size={"lg"}>로그인</Button>
+              <Button type="submit" size={"lg"}>
+                로그인
+              </Button>
             </div>
           </form>
         </Form>
