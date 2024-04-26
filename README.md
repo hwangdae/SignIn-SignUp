@@ -1,20 +1,20 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## DevCamp - Front Project
+---
+회원가입/로그인 페이지 개발 및 유효성 검증 사이트
 
-## Getting Started
+## Tech Stack
+---
+1. React
+2. TypeScript
+3. React-hook-form
+4. zod
+5. framer-motion
+6. lucide-react
 
-First, run the development server:
+## Site URL
+---
+signform.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
