@@ -20,30 +20,32 @@ http://signform.vercel.app
 ### Sign In
 ![image](https://github.com/hwangdae/SignIn-SignUp/assets/105066603/d4cac889-a0a6-4b6e-bdba-0b2baf3d3b8c)
 
-##File Tree
+## File Tree
+
 📦src
- ┣ 📂components
- ┃ ┣ 📂ui
- ┃ ┃ ┣ 📜button.tsx
- ┃ ┃ ┣ 📜card.tsx
- ┃ ┃ ┣ 📜dropdown-menu.tsx
- ┃ ┃ ┣ 📜form.tsx
- ┃ ┃ ┣ 📜input.tsx
- ┃ ┃ ┣ 📜label.tsx
- ┃ ┃ ┗ 📜select.tsx
- ┃ ┣ 📜mode-toggle.tsx
- ┃ ┗ 📜theme-provider.tsx
- ┣ 📂lib
- ┃ ┗ 📜utils.ts
- ┣ 📂pages
- ┃ ┣ 📂signIn
- ┃ ┃ ┗ 📜index.tsx
- ┃ ┣ 📂signUp
- ┃ ┃ ┗ 📜index.tsx
- ┃ ┣ 📜index.tsx
- ┃ ┣ 📜_app.tsx
- ┃ ┗ 📜_document.tsx
- ┣ 📂styles
- ┃ ┗ 📜globals.css
- ┗ 📂validators
- ┃ ┗ 📜auth.ts
+<br/>
+ ┣ 📂components<br/>
+ ┃ ┣ 📂ui<br/>
+ ┃ ┃ ┣ 📜button.tsx<br/>
+ ┃ ┃ ┣ 📜card.tsx<br/>
+ ┃ ┃ ┣ 📜dropdown-menu.tsx<br/>
+ ┃ ┃ ┣ 📜form.tsx<br/>
+ ┃ ┃ ┣ 📜input.tsx<br/>
+ ┃ ┃ ┣ 📜label.tsx<br/>
+ ┃ ┃ ┗ 📜select.tsx<br/>
+ ┃ ┣ 📜mode-toggle.tsx<br/>
+ ┃ ┗ 📜theme-provider.tsx<br/>
+ ┣ 📂lib<br/>
+ ┃ ┗ 📜utils.ts<br/>
+ ┣ 📂pages<br/>
+ ┃ ┣ 📂signIn<br/>
+ ┃ ┃ ┗ 📜index.tsx<br/>
+ ┃ ┣ 📂signUp<br/>
+ ┃ ┃ ┗ 📜index.tsx<br/>
+ ┃ ┣ 📜index.tsx<br/>
+ ┃ ┣ 📜_app.tsx<br/>
+ ┃ ┗ 📜_document.tsx<br/>
+ ┣ 📂styles<br/>
+ ┃ ┗ 📜globals.css<br/>
+ ┗ 📂validators<br/>
+ ┃ ┗ 📜auth.ts<br/>
