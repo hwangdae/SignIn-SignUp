@@ -30,6 +30,12 @@ import { Button } from "@/components/ui/button";
 // ... other imports
 ````
 
+## 회원가입 단계 설정
+`useState`훅을 사용하여 회원가입 양식의 현재 단계를 관리합니다.(첫번째 단계 0, 두번째 단계 1)
+````js
+const [step, setStep] = useState<number>(0);
+````
+
 ## Form 설정
 사전에 정의된 스키마에 대한 유효성 검사를 하기 위해 `react-hook-form`, `zodResolver`, `registerSchema`와 함께 `useForm`훅을 사용합니다.
 ````js
@@ -42,12 +48,46 @@ const form = useForm<RegisterInput>({
 });
 ````
 
-## Preview
-### Main
-![image](https://github.com/hwangdae/SignIn-SignUp/assets/105066603/27737518-10c6-4abf-9717-1cd8285ff49f)
-### Sign Up
-![image](https://github.com/hwangdae/SignIn-SignUp/assets/105066603/d38f739e-a656-49df-aa33-eb8b3049ac1b)
-### Sign In
-![image](https://github.com/hwangdae/SignIn-SignUp/assets/105066603/d4cac889-a0a6-4b6e-bdba-0b2baf3d3b8c)
+## 양식 렌더링
+import한 components에서 반환되는 JSX 양식을 사용하여 카드 레이아웃을 구성합니다. 양식은 세부 정보와 비밀번호 설정 두 단계로 구분됩니다. `motion.div`의 요소는 단계를 나타내며 `framer-motion`은 단계 전환 애니메이션을 합니다.
+````js
+return (
+      <Card className={cn("w-[350px] absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2")}>
+        // ... other JSX code
+        <CardContent>
+          <Form {...form}>
+            <form
+              onSubmit={form.handleSubmit(onSubmit)}
+              className="space-y-2 relative overflow-x-hidden"
+            >
+              // ... form fields for step 1 and step 2
+              <div className={"flex gap-2"}>
+                // ... navigation and submission buttons
+              </div>
+            </form>
+          </Form>
+        </CardContent>
+      </Card>
+);
+````
+
+## Form Field
+제어 양식 필드를 작성하기 위한 구성요소 입니다.
+````js
+<FormField
+  control={form.control}
+  name="username"
+  render={({ field }) => (
+    <FormItem>
+      <FormLabel>Username</FormLabel>
+      <FormControl>
+        <Input placeholder="shadcn" {...field} />
+      </FormControl>
+      <FormDescription>This is your public display name.</FormDescription>
+      <FormMessage />
+    </FormItem>
+  )}
+/>
+````
 
 
